@@ -1,28 +1,52 @@
-import If from '../If/If.component';
+// import If from '../If/If.component';
 import { Link } from 'react-router-dom';
 
-const Navbar = (props) => {
+import Auth from '../Auth/Auth';
+
+const Navbar = () => {
     return <>
         <ul>
 
-            <If condition={!props.authenticated}>
+            {/*
+            Isso está comentado pois ainda não está atualizando o status da aplicação
+            Seria alguma coisa como mandar as mensagens no Angular
+            <If condition={!Auth.isAuthenticated()}>
                 <li>
-                    <Link to="/">Login</Link>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/auth">Login</Link>
                 </li>
             </If>
 
-            <If condition={props.authenticated}>
+            <If condition={Auth.isAuthenticated()}>
                 <li>
-                    <Link to="/">Início</Link>
+                    <Link to="/videos">Início</Link>
                 </li>
                 <li>
                     <Link to="/submitVideo">Enviar vídeo</Link>
                 </li>
                 <li>
-                    <Link to="/logout">Sair</Link>
+                    <Link to="/auth">Sair</Link>
                 </li>
             </If>
+            */}
 
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/auth">Login</Link>
+            </li>
+            <li>
+                <Link to="/videos">Meus Vídeos</Link>
+            </li>
+            <li>
+                <Link to="/videos/submit">Enviar vídeo</Link>
+            </li>
+            <li>
+                <Link onClick={() => Auth.logout()} to="/auth">Sair</Link>
+            </li>
         </ul>
     </>;
 }
