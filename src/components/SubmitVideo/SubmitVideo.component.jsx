@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './../../styles/styles.scss';
+import "./../../styles/styles.scss";
 
 /*
 {
@@ -29,57 +29,68 @@ import './../../styles/styles.scss';
 */
 
 const SubmitVideo = (props) => {
+  const youtubeApiKey = "AIzaSyC-FhFJq7JYcqio6AKMSCpxmMXcUBrDg7o";
+  const [videoUrl, setVideoUrl] = useState("");
 
-    const youtubeApiKey = 'AIzaSyC-FhFJq7JYcqio6AKMSCpxmMXcUBrDg7o';
-    const [videoUrl, setVideoUrl] = useState('');
+  const submitForm = async (e, props) => {
+    e.preventDefault();
 
-    const submitForm = async (e, props) => {
-        e.preventDefault();
+    let videoId = videoUrl.split("v=")[1];
+    let videoSnippet = {};
 
-        let videoId = videoUrl.split('v=')[1];
-        let videoSnippet = {};
+    console.log("Enviou o form");
 
-        console.log('Enviou o form');
+    await fetch(
+      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${youtubeApiKey}`
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        videoSnippet = json.items[0].snippet;
+      });
 
-        await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${youtubeApiKey}`)
-            .then(response => response.json())
-            .then(json => {
-                console.log(json)
-                videoSnippet = json.items[0].snippet;
-            });
+    // setVideoUrl('https://www.youtube.com/watch?v=QH2-TGUlwu4');
+    // props.onSubmit('opa');
+    props.onVideoSubmit({
+      id: Math.random(),
+      titulo: videoSnippet.title,
+      description: videoSnippet.description,
+      cover: videoSnippet.thumbnails.default.url,
+      url: videoUrl,
+      duration: "FALTA",
+      lang: {
+        original: "PT",
+        target: "EN",
+      },
+      status: "completed",
+      startedAt: "2020-01-01 10:12:25",
+      updatedAt: "2020-01-05 23:00:12",
+    });
 
-        // setVideoUrl('https://www.youtube.com/watch?v=QH2-TGUlwu4');
-        // props.onSubmit('opa');
-        props.onVideoSubmit({
-            id: Math.random(),
-            titulo: videoSnippet.title,
-            description: videoSnippet.description,
-            cover: videoSnippet.thumbnails.default.url,
-            url: videoUrl,
-            duration: 'FALTA',
-            lang: {
-                original: 'PT',
-                target: 'EN'
-            },
-            status: 'completed',
-            startedAt: '2020-01-01 10:12:25',
-            updatedAt: '2020-01-05 23:00:12',
-        });
+    setVideoUrl("");
+  };
 
-        setVideoUrl('');
-    }
-
-    return <>
-        <form onSubmit={(e) => submitForm(e, props)}>
-            <div>
-                <label htmlFor="videoUrl">Video URL</label>
-                <input value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} type="url" id="videoUrl" placeholder="https://youtube.com/?watch=..." />
-            </div>
-            <div>
-                <button disabled={!videoUrl.trim()} type="submit" className="success">Enviar</button>
-            </div>
-        </form>
-    </>;
-}
+  return (
+    <>
+      <form onSubmit={(e) => submitForm(e, props)}>
+        <div>
+          <label htmlFor="videoUrl">Video URL</label>
+          <input
+            value={videoUrl}
+            onChange={(e) => setVideoUrl(e.target.value)}
+            type="url"
+            id="videoUrl"
+            placeholder="https://youtube.com/?watch=..."
+          />
+        </div>
+        <div>
+          <button disabled={!videoUrl.trim()} type="submit" className="success">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </>
+  );
+};
 
 export default SubmitVideo;

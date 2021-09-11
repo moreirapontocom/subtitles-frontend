@@ -1,21 +1,21 @@
-@import './../../styles/styles.scss';
+@import "./../../styles/styles.scss";
 
 .Editor {
-    &.row {
-        & > .col {
-            &:last-child {
-                flex-basis: 40%;
-            }
-        }
+  &.row {
+    & > .col {
+      &:last-child {
+        flex-basis: 40%;
+      }
     }
+  }
 
-    textarea {
-        height: 500px;
-        resize: none;
-    }
+  textarea {
+    height: 500px;
+    resize: none;
+  }
 
-    .pauseVideoWhileTyping {
-        margin-top: $padding+10;
-        margin-bottom: $padding+10;
-    }
+  .pauseVideoWhileTyping {
+    margin-top: $padding + 10;
+    margin-bottom: $padding + 10;
+  }
 }
