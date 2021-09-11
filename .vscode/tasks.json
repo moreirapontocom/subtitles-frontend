@@ -1,0 +1,17 @@
+{
+	// My Gist: https://gist.github.com/moreirapontocom/f46e7b6dd0f34c200543da8ad958e90d
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"label": "npm: start",
+			"detail": "react-scripts start",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
