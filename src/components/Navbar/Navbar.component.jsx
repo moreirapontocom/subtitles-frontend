@@ -1,9 +1,11 @@
 // import If from '../If/If.component';
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import Auth from "../Auth/Auth";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  console.log('PROPS DA NAVBAR >>>> ', props)
   return (
     <>
       <ul>
@@ -54,4 +56,12 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+function mapStateToProps(state) {
+  return {
+    id: state.user.id,
+    name: state.user.name,
+    email: state.user.email,
+  }
+}
+
+export default connect(mapStateToProps)(Navbar);
