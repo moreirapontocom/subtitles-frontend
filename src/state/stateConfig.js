@@ -1,19 +1,24 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers } from "redux";
 
 const initialState = {
-    id: 1,
-    name: 'Lucas Moreira',
-    email: 'moreirapontocom@gmail.com'
-}
+  id: null,
+  name: null,
+  email: null,
+};
 
 const reducers = combineReducers({
-    user: function(state, action) {
+  user: function (state, action) {
+    switch (action.type) {
+      case "SET_USER":
+        return action.payload;
+      default:
         return initialState;
     }
+  },
 });
 
 function store() {
-    return createStore(reducers);
+  return createStore(reducers);
 }
 
 export default store;
