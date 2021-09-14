@@ -1,12 +1,14 @@
 import { createStore, combineReducers } from 'redux';
 
+const initialState = {
+    id: 1,
+    name: 'Lucas Moreira',
+    email: 'moreirapontocom@gmail.com'
+}
+
 const reducers = combineReducers({
     user: function(state, action) {
-        return {
-            id: 1,
-            name: 'Lucas Moreira',
-            email: 'moreirapontocom@gmail.com'
-        }
+        return initialState;
     }
 });
 
