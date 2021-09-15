@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import If from "../If/If.component";
 import { setUser } from "../../state/actions/user.actions";
@@ -18,19 +18,19 @@ const Navbar = (props) => {
       <ul>
         <If condition={!user.id}>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" exact activeClassName="active">Home</NavLink>
           </li>
           <li>
-            <Link to="/auth">Login</Link>
+            <NavLink to="/auth" activeClassName="active">Login</NavLink>
           </li>
         </If>
 
         <If condition={user.id}>
           <li>
-            <Link to="/videos">Meus vídeos</Link>
+            <NavLink to="/videos" activeClassName="active">Meus vídeos</NavLink>
           </li>
           <li>
-            <Link to="/videos/submit">Enviar vídeo</Link>
+            <NavLink to="/videos/submit" activeClassName="active">Enviar vídeo</NavLink>
           </li>
           <li>
             <button onClick={() => logout()} type="button">Sair</button>
