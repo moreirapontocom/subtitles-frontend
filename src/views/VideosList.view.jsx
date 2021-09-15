@@ -1,11 +1,12 @@
-import Header from "../components/Header/Header.component";
+import Panel from "../views/Panel.view";
 import VideosList from "../components/VideosList/VideosList.component";
 
 const VideosListView = () => {
   return (
     <>
-      <Header title="Videos List">Videos List Description comes here</Header>
-      <VideosList></VideosList>
+      <Panel title="Videos List" description="Videos List Description comes here">
+        <VideosList></VideosList>
+      </Panel>
     </>
   );
 };

@@ -1,11 +1,19 @@
-import Header from "../components/Header/Header.component";
+import { NavLink } from "react-router-dom";
+import Panel from "../views/Panel.view";
 import Editor from "../components/Editor/Editor.component";
 
 const EditorView = () => {
   return (
     <>
-      <Header title="Edit video subtitles">Page Description comes here</Header>
-      <Editor></Editor>
+      <Panel
+        title="Edit video subtitles"
+        description="Page Description comes here"
+      >
+        <div className="mb-4">
+          <NavLink to="/videos">&larr; voltar para Todos os Vídeos</NavLink>
+        </div>
+        <Editor />
+      </Panel>
     </>
   );
 };

@@ -1,5 +1,12 @@
+import Navbar from "../components/Navbar/Navbar.component";
+
 const LandingView = () => {
-  return <>Aqui tem a landing page</>;
+  return (
+    <>
+      <Navbar authenticated={true} />
+      Aqui tem a landing page
+    </>
+  );
 };
 
 export default LandingView;

@@ -12,7 +12,7 @@ const Routes = () => {
   return (
     <>
       <Switch>
-        <Route path="/videos/submit" component={SubmitVideoView} />
+        <Route path="/submit-video" component={SubmitVideoView} />
         <Route path="/videos/:videoId" component={EditorView} />
         <Route path="/videos" component={VideosListView} />
         <Route path="/auth" component={AuthView} />

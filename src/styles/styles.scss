@@ -11,34 +11,3 @@ body {
   background-color: $light-color-bg;
   color: $dark-color;
 }
-
-.tag {
-  padding: $padding - 5;
-  background-color: darken($color: $light-color-bg, $amount: 15);
-  text-transform: capitalize;
-  display: inline-block;
-  border-radius: $border-radius;
-  font-size: 0.8rem;
-}
-
-.container {
-  margin: auto;
-  max-width: 80%;
-
-  .row {
-    padding: 10px;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-
-    .col {
-      flex-grow: 1;
-      flex-basis: 50%;
-      margin-right: auto;
-      padding: $padding;
-      overflow: hidden;
-    }
-  }
-}

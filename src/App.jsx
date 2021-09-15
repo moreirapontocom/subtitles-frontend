@@ -4,7 +4,6 @@ import stateConfig from './state/stateConfig'
 
 // Components
 import Routes from "./App.routes";
-import Navbar from "./components/Navbar/Navbar.component";
 // import Notification from './components/Notification/Notification.component';
 
 const store = stateConfig();
@@ -27,11 +26,7 @@ const App = () => {
       <Provider store={store}>
         <Router>
           {/* {notification ? <Notification message={notification} /> : null} */}
-
-          <div className="container">
-            <Navbar authenticated={true} />
-            <Routes />
-          </div>
+          <Routes />
         </Router>
       </Provider>
     </>
