@@ -85,13 +85,15 @@ const Editor = () => {
           <input
             onChange={(e) => setVideo(e.target.value)}
             value={video}
+            className="form-control"
             type="url"
           />
         </div>
         <div className="col">
           <textarea
             onChange={onUserTyping}
-            cols="30"
+            cols=""
+            className="form-control"
             rows="20"
             placeholder="Edit the vídeo subtitles here"
           ></textarea>
@@ -109,26 +111,38 @@ const Editor = () => {
             </label>
           </div>
 
-          {playing ? (
-            <button onClick={() => doAction("pause")} type="button">
-              <i className="fas fa-pause"></i> Pause
-            </button>
-          ) : (
-            <button onClick={() => doAction("play")} type="button">
-              <i className="fas fa-play"></i> Play
-            </button>
-          )}
+          <div className="row">
+            <div className="col">
+              <div className="btn-group" role="group" aria-label="Basic example">
+                {playing ? (
+                  <button onClick={() => doAction("pause")} type="button" className="btn btn-secondary">
+                    <i className="fas fa-pause"></i> Pause
+                  </button>
+                ) : (
+                  <button onClick={() => doAction("play")} type="button" className="btn btn-secondary">
+                    <i className="fas fa-play"></i> Play
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="col text-end">
 
-          <button onClick={() => submitCaption("draft")} type="button">
-            <i className="fas fa-check"></i> Save Draft
-          </button>
-          <button
-            onClick={() => submitCaption("publish")}
-            type="button"
-            className="success"
-          >
-            <i className="fas fa-check"></i> Publish
-          </button>
+              <div className="btn-group" role="group" aria-label="Basic example">
+                <button onClick={() => submitCaption("draft")} type="button" className="btn btn-primary me-1">
+                  <i className="fas fa-check"></i> Save Draft
+                </button>
+                <button
+                  onClick={() => submitCaption("publish")}
+                  type="button"
+                  className="btn btn-success"
+                >
+                  <i className="fas fa-check"></i> Publish
+                </button>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </>

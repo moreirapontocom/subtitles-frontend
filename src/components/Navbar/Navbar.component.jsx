@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import If from "../If/If.component";
 import { setUser } from "../../state/actions/user.actions";
 import { useHistory } from "react-router-dom";
+import "./Navbar.component.scss";
 
 const Navbar = (props) => {
   const history = useHistory();
