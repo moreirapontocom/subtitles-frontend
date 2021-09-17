@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "flag-icon-css/css/flag-icon.min.css";
 import { getAllVideos } from "../services/videos.service";
+import { trimToLength } from "./../Utils";
 
 const VideosListView = () => {
   const [videos, setVideos] = useState([]);
@@ -41,9 +42,9 @@ const VideosListView = () => {
           </td>
           <td>
             <div>
-              <strong>{video.titulo}</strong>
+              <strong>{trimToLength(video.titulo, 50)}</strong>
             </div>
-            <div>{video.description}</div>
+            <div>{trimToLength(video.description, 70)}</div>
             <a href={video.url} target="_blank" rel="noreferrer">
               {video.url}
             </a>
@@ -62,7 +63,7 @@ const VideosListView = () => {
             <span className={`flag-icon flag-icon-${video.lang.target}`}></span>
           </td>
           <td>{getJobStatusDescription(video.status)}</td>
-          <td>
+          <td className="text-right">
             <Link to={`/videos/${video.id}`} className="btn btn-secondary">
               <i className="fas fa-keyboard"></i>
             </Link>
@@ -75,7 +76,7 @@ const VideosListView = () => {
   return (
     <>
       <Panel
-        title="Videos List"
+        title={`Videos List (${videos.length})`}
         description="Videos List Description comes here"
       >
         <table className="table table-striped">
@@ -87,7 +88,7 @@ const VideosListView = () => {
               <th className="text-center">Original</th>
               <th className="text-center">Destino</th>
               <th>Status</th>
-              <th></th>
+              <th className="text-right"></th>
             </tr>
           </thead>
           <tbody>{mapVideos()}</tbody>
