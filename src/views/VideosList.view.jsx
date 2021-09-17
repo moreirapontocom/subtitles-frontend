@@ -1,62 +1,39 @@
 import Panel from "../views/Panel.view";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "flag-icon-css/css/flag-icon.min.css";
+import { getVideosService } from "../services/videos.service";
 
 const VideosListView = () => {
-  const [videos] = useState(getVideos());
+  const [videos, setVideos] = useState([]);
 
-  function getVideos() {
-    const list = [
-      {
-        id: 2,
-        titulo: "Vídeo do Felipe",
-        description: "O Felipe mora no Canadá com a Renata",
-        cover: "https://i.ytimg.com/vi/2_FJrmft3uQ/hqdefault.jpg",
-        url: "https://www.youtube.com/watch?v=2_FJrmft3uQ",
-        duration: "1:30",
-        lang: {
-          original: "br",
-          target: "us",
-        },
-        status: "not_started",
-        startedAt: "2020-01-01 10:12:25",
-        updatedAt: "2020-01-05 23:00:12",
-      },
-      {
-        id: 3,
-        titulo: "Salve Batrick",
-        description: "Patrick tá nos eua",
-        cover: "https://i.ytimg.com/vi/EvJR-uBrPpo/hqdefault.jpg",
-        url: "https://www.youtube.com/watch?v=EvJR-uBrPpo",
-        duration: "1:30",
-        lang: {
-          original: "br",
-          target: "br",
-        },
-        status: "completed",
-        startedAt: "2020-01-01 10:12:25",
-        updatedAt: "2020-01-05 23:00:12",
-      },
-    ];
+  useEffect(() => {
+    getVideos();
+  }, []);
 
-    function getJobStatusDescription(jobStatus) {
-      switch (jobStatus) {
-        case "completed":
-          return <span className="badge bg-success">Complete</span>;
+  async function getVideos() {
+    const list = await getVideosService();
+    return setVideos(list);
+  }
 
-        case "not_started":
-          return <span className="badge bg-secondary">To Do</span>;
+  function getJobStatusDescription(jobStatus) {
+    switch (jobStatus) {
+      case "completed":
+        return <span className="badge bg-success">Complete</span>;
 
-        case "in_progress":
-          return <span className="badge bg-primary">In Progress</span>;
+      case "not_started":
+        return <span className="badge bg-secondary">To Do</span>;
 
-        default:
-          return <span className="badge bg-primary">--</span>;
-      }
+      case "in_progress":
+        return <span className="badge bg-primary">In Progress</span>;
+
+      default:
+        return <span className="badge bg-primary">--</span>;
     }
+  }
 
-    return list.map((video) => {
+  function mapVideos() {
+    return videos.map((video) => {
       return (
         <tr key={video.url}>
           <td>
@@ -66,9 +43,7 @@ const VideosListView = () => {
             <div>
               <strong>{video.titulo}</strong>
             </div>
-            <div>
-              {video.description}
-            </div>
+            <div>{video.description}</div>
             <a href={video.url} target="_blank" rel="noreferrer">
               {video.url}
             </a>
@@ -115,7 +90,7 @@ const VideosListView = () => {
               <th></th>
             </tr>
           </thead>
-          <tbody>{videos}</tbody>
+          <tbody>{mapVideos()}</tbody>
         </table>
       </Panel>
     </>

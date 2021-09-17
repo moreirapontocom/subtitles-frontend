@@ -1,0 +1,38 @@
+{
+  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "profile": { "name": "typicode" },
+
+  "videos": [
+    {
+        "id": 2,
+        "titulo": "Vídeo do Felipe",
+        "description": "O Felipe mora no Canadá com a Renata",
+        "cover": "https://i.ytimg.com/vi/2_FJrmft3uQ/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=2_FJrmft3uQ",
+        "duration": "1:30",
+        "lang": {
+          "original": "br",
+          "target": "us"
+        },
+        "status": "not_started",
+        "startedAt": "2020-01-01 10:12:25",
+        "updatedAt": "2020-01-05 23:00:12"
+      },
+      {
+        "id": 3,
+        "titulo": "Salve Batrick",
+        "description": "Patrick tá nos eua",
+        "cover": "https://i.ytimg.com/vi/EvJR-uBrPpo/hqdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=EvJR-uBrPpo",
+        "duration": "1:30",
+        "lang": {
+          "original": "br",
+          "target": "br"
+        },
+        "status": "completed",
+        "startedAt": "2020-01-01 10:12:25",
+        "updatedAt": "2020-01-05 23:00:12"
+      }
+  ]
+}
