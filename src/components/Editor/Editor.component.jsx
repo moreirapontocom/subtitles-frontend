@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactPlayer from "react-player/youtube";
-
-// https://www.npmjs.com/package/react-player
-// https://www.youtube.com/watch?v=2_FJrmft3uQ // Fellipe
-// https://www.youtube.com/watch?v=EvJR-uBrPpo // Patrick
-// https://www.youtube.com/embed/2_FJrmft3uQ
-// https://youtu.be/2_FJrmft3uQ
-
 import "./Editor.component.scss";
 
-const Editor = () => {
-  const defaultVideo = "https://www.youtube.com/watch?v=2_FJrmft3uQ";
-
-  const [video, setVideo] = useState(defaultVideo);
+const Editor = (props) => {
+  const { video } = props;
   const [playing, setPlaying] = useState(false);
   const [captionValue, setCaptionValue] = useState("");
   const [pauseVideoWhileTyping, setPauseVideoWhileTyping] = useState(true);
@@ -48,7 +39,7 @@ const Editor = () => {
     alert(`Submited as ${submissionMethod}`);
   }
 
-  function doAction(action) {
+  function doPlayerAction(action) {
     action === "play" ? setPlaying(true) : setPlaying(false);
   }
 
@@ -77,16 +68,7 @@ const Editor = () => {
             onPlay={() => onPlayerAction("play")}
             onPause={() => onPlayerAction("pause")}
             playing={playing}
-            url={video}
-          />
-
-          <br />
-
-          <input
-            onChange={(e) => setVideo(e.target.value)}
-            value={video}
-            className="form-control"
-            type="url"
+            url={video.url}
           />
         </div>
         <div className="col">
@@ -96,6 +78,7 @@ const Editor = () => {
             className="form-control"
             rows="20"
             placeholder="Edit the vídeo subtitles here"
+            value={video.subtitles}
           ></textarea>
 
           <div className="pauseVideoWhileTyping">
@@ -115,11 +98,11 @@ const Editor = () => {
             <div className="col">
               <div className="btn-group" role="group" aria-label="Basic example">
                 {playing ? (
-                  <button onClick={() => doAction("pause")} type="button" className="btn btn-secondary">
+                  <button onClick={() => doPlayerAction("pause")} type="button" className="btn btn-secondary">
                     <i className="fas fa-pause"></i> Pause
                   </button>
                 ) : (
-                  <button onClick={() => doAction("play")} type="button" className="btn btn-secondary">
+                  <button onClick={() => doPlayerAction("play")} type="button" className="btn btn-secondary">
                     <i className="fas fa-play"></i> Play
                   </button>
                 )}

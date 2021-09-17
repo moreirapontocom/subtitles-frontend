@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar/Navbar.component";
 
 function Panel(props) {
+  const { breadcrumb } = props;
+
   return (
     <>
       <Navbar authenticated={true} />

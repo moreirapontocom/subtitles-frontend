@@ -2,7 +2,7 @@ import Panel from "../views/Panel.view";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "flag-icon-css/css/flag-icon.min.css";
-import { getVideosService } from "../services/videos.service";
+import { getAllVideos } from "../services/videos.service";
 
 const VideosListView = () => {
   const [videos, setVideos] = useState([]);
@@ -12,7 +12,7 @@ const VideosListView = () => {
   }, []);
 
   async function getVideos() {
-    const list = await getVideosService();
+    const list = await getAllVideos();
     return setVideos(list);
   }
 

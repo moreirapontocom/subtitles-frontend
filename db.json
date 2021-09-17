@@ -15,6 +15,7 @@
           "original": "br",
           "target": "us"
         },
+        "subtitles": "Olá pessoal! Aqui tem o início da legenda que eu ainda não terminei",
         "status": "not_started",
         "startedAt": "2020-01-01 10:12:25",
         "updatedAt": "2020-01-05 23:00:12"
@@ -30,6 +31,7 @@
           "original": "br",
           "target": "br"
         },
+        "subtitles": "Salve salve quebrada! Como é que tamo?",
         "status": "completed",
         "startedAt": "2020-01-01 10:12:25",
         "updatedAt": "2020-01-05 23:00:12"
