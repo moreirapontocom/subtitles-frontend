@@ -1,0 +1,19 @@
+@import "./_variables.scss";
+
+.nav-tabs {
+    margin-top: 0;
+    border-bottom: 0;
+
+    .nav-item.show .nav-link,
+    .nav-link.active {
+        background-color: $light-color-bg;
+        border: solid 1px transparent;
+        border-bottom: solid 1px $light-color-bg;
+    }
+
+    .nav-link:focus,
+    .nav-link:hover {
+        border: solid 1px transparent;
+        border-bottom: solid 1px $light-color-bg;
+    }
+}

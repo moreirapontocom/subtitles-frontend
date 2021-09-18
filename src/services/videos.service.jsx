@@ -23,6 +23,12 @@ export function addVideo(video) {
   }).then((res) => res.json());
 }
 
+export function removeVideoById(videoId) {
+  return fetch(`${API}/videos/${videoId}`, {
+    method: "DELETE",
+  }).then((res) => res.json());
+}
+
 export function getVideoSnippetFromYoutubeVideoUrl(youtubeVideoUrl) {
   const youtubeApiUrl =
     "https://youtube.googleapis.com/youtube/v3/videos?part=snippet";

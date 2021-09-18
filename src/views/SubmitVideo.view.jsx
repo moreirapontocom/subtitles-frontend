@@ -1,12 +1,24 @@
-import Panel from "./Panel.view";
+import PageHeader from "./../components/PageHeader/PageHeader.component";
+import Navbar from "./../components/Navbar/Navbar.component";
 import SubmitVideo from "../components/SubmitVideo/SubmitVideo.component";
 
 const SubmitVideoView = () => {
   return (
     <>
-      <Panel title="Submit video" description="Aqui tem a descrição desta tela">
-        <SubmitVideo />
-      </Panel>
+      <Navbar authenticated={true} />
+
+      <div className="PageHeader">
+        <PageHeader
+          title="Submit video"
+          description="Aqui tem a descrição desta tela"
+        />
+      </div>
+
+      <div className="PageContent">
+        <div className="container">
+          <SubmitVideo />
+        </div>
+      </div>
     </>
   );
 };

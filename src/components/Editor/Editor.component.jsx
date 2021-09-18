@@ -73,12 +73,12 @@ const Editor = (props) => {
         </div>
         <div className="col">
           <textarea
-            onChange={onUserTyping}
+            onChange={(e) => onUserTyping(e)}
             cols=""
             className="form-control"
-            rows="20"
+            rows="10"
             placeholder="Edit the vídeo subtitles here"
-            value={video.subtitles}
+            defaultValue={video.subtitles}
           ></textarea>
 
           <div className="pauseVideoWhileTyping">

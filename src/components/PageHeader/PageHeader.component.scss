@@ -1,0 +1,20 @@
+@import "./../../styles/variables";
+
+.PageHeader {
+    background-color: darken($color: $light-color-bg, $amount: 10);
+    padding-top: $padding + 20;
+    padding-bottom: $padding + 20;
+
+    &.with-tabs {
+        padding-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+.PageContent {
+    margin-top: $padding + 20;
+}

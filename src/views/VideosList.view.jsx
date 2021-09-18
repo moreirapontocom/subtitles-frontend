@@ -1,9 +1,10 @@
-import Panel from "../views/Panel.view";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "flag-icon-css/css/flag-icon.min.css";
 import { getAllVideos } from "../services/videos.service";
 import { trimToLength } from "./../Utils";
+import PageHeader from "../components/PageHeader/PageHeader.component";
+import Navbar from "../components/Navbar/Navbar.component";
 
 const VideosListView = () => {
   const [videos, setVideos] = useState([]);
@@ -38,21 +39,20 @@ const VideosListView = () => {
       return (
         <tr key={video.url}>
           <td>
-            <img src={video.cover} alt={video.titulo} height="70" />
+            <img src={video.cover} alt={video.titulo} height="60" />
           </td>
           <td>
             <div>
-              <strong>{trimToLength(video.titulo, 50)}</strong>
+              <a
+                href={video.url}
+                target="_blank"
+                rel="noreferrer"
+                className="me-3"
+              >
+                <i className="fab fa-youtube text-danger"></i>
+              </a>
+              {trimToLength(video.titulo, 50)}
             </div>
-            <div>{trimToLength(video.description, 70)}</div>
-            <a href={video.url} target="_blank" rel="noreferrer">
-              {video.url}
-            </a>
-          </td>
-          <td>
-            {video.lang.original === video.lang.target
-              ? "Legendar"
-              : "Traduzir"}
           </td>
           <td className="text-center">
             <span
@@ -62,9 +62,14 @@ const VideosListView = () => {
           <td className="text-center">
             <span className={`flag-icon flag-icon-${video.lang.target}`}></span>
           </td>
-          <td>{getJobStatusDescription(video.status)}</td>
+          <td className="text-center">
+            {getJobStatusDescription(video.status)}
+          </td>
           <td className="text-right">
-            <Link to={`/videos/${video.id}`} className="btn btn-secondary">
+            <Link
+              to={`/videos/${video.id}`}
+              className="btn btn-outline-secondary"
+            >
               <i className="fas fa-keyboard"></i>
             </Link>
           </td>
@@ -75,25 +80,29 @@ const VideosListView = () => {
 
   return (
     <>
-      <Panel
-        title={`Videos List (${videos.length})`}
-        description="Videos List Description comes here"
-      >
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Cover</th>
-              <th>Titulo</th>
-              <th>Job</th>
-              <th className="text-center">Original</th>
-              <th className="text-center">Destino</th>
-              <th>Status</th>
-              <th className="text-right"></th>
-            </tr>
-          </thead>
-          <tbody>{mapVideos()}</tbody>
-        </table>
-      </Panel>
+      <Navbar authenticated={true} />
+
+      <div className="PageHeader">
+        <PageHeader title={`Videos List (${videos.length})`} description="Videos List Description comes here" />
+      </div>
+
+      <div className="PageContent">
+        <div className="container">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Thumbnail</th>
+                <th>Title</th>
+                <th className="text-center">Original</th>
+                <th className="text-center">Target</th>
+                <th className="text-center">Job Status</th>
+                <th className="text-right"></th>
+              </tr>
+            </thead>
+            <tbody>{mapVideos()}</tbody>
+          </table>
+        </div>
+      </div>
     </>
   );
 };
