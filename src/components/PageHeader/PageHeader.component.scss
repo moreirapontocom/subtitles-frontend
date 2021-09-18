@@ -1,7 +1,8 @@
 @import "./../../styles/variables";
 
 .PageHeader {
-    background-color: darken($color: $light-color-bg, $amount: 10);
+    background-color: $dark-color-bg;
+    color: white;
     padding-top: $padding + 20;
     padding-bottom: $padding + 20;
 

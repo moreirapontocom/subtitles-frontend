@@ -16,7 +16,7 @@ const Navbar = (props) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <NavLink className="navbar-brand" to="/">
             Navbar

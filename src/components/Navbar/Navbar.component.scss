@@ -3,5 +3,9 @@
 nav {
     &.navbar {
         margin-bottom: 0;
+
+        &.bg-dark {
+            background-color: darken($color: $dark-color-bg, $amount: 2) !important;
+        }
     }
 }

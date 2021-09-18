@@ -38,10 +38,10 @@ const VideosListView = () => {
     return videos.map((video) => {
       return (
         <tr key={video.url}>
-          <td>
-            <img src={video.cover} alt={video.titulo} height="60" />
+          <td style={{ backgroundColor: 'black', width: '134px' }} className="text-center p-0">
+            <img src={video.cover} alt={video.titulo} height="100" />
           </td>
-          <td>
+          <td className="align-middle">
             <div>
               <a
                 href={video.url}
@@ -54,18 +54,18 @@ const VideosListView = () => {
               {trimToLength(video.titulo, 50)}
             </div>
           </td>
-          <td className="text-center">
+          <td className="align-middle text-center">
             <span
               className={`flag-icon flag-icon-${video.lang.original}`}
             ></span>
           </td>
-          <td className="text-center">
+          <td className="align-middle text-center">
             <span className={`flag-icon flag-icon-${video.lang.target}`}></span>
           </td>
-          <td className="text-center">
+          <td className="align-middle text-center">
             {getJobStatusDescription(video.status)}
           </td>
-          <td className="text-right">
+          <td className="align-middle text-center">
             <Link
               to={`/videos/${video.id}`}
               className="btn btn-outline-secondary"
@@ -88,7 +88,8 @@ const VideosListView = () => {
 
       <div className="PageContent">
         <div className="container">
-          <table className="table table-striped">
+          <table className="table table-bordered caption-top">
+            <caption>{videos.length} videos found</caption>
             <thead>
               <tr>
                 <th>Thumbnail</th>
