@@ -2,16 +2,18 @@ import { connect } from "react-redux";
 import { setUser } from "./../state/actions/user.actions";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { login as doLogin } from "../services/users.service";
 
 const AuthView = (props) => {
   const history = useHistory();
 
-  function login() {
-    props.setUser({
-      id: 1,
-      name: "Lucas Moreira",
-      email: "moreirapontocom@gmail.com",
-    });
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  async function login() {
+    const user = await doLogin({ email, password });
+    props.setUser(user);
     history.push("/videos");
   }
 
@@ -29,19 +31,26 @@ const AuthView = (props) => {
                     <label htmlFor="email" className="form-label">
                       E-mail
                     </label>
-                    <input type="email" id="email" className="form-control" />
+                    <input
+                      onChange={(e) => setEmail(e.target.value)}
+                      type="email"
+                      id="email"
+                      className="form-control"
+                    />
                   </div>
                   <div className="mb-3">
                     <label htmlFor="password" className="form-label">
                       Password
                     </label>
                     <input
+                      onChange={(e) => setPassword(e.target.value)}
                       type="password"
                       id="password"
                       className="form-control"
                     />
                   </div>
                   <button
+                    disabled={!email || !password}
                     onClick={() => login()}
                     type="button"
                     className="btn btn-primary"

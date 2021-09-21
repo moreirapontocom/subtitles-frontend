@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@email.com",
+      "password": "asdf"
+    }
+  ],
   "videos": [
     {
       "id": 2,
