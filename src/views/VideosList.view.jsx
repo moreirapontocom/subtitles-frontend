@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar/Navbar.component";
 const VideosListView = () => {
   const [videos, setVideos] = useState([]);
   const [filter, setFilter] = useState("all");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     getVideos();
@@ -22,7 +23,12 @@ const VideosListView = () => {
   function getJobStatusDescription(jobStatus) {
     switch (jobStatus) {
       case "0created":
-        return <span className="badge bg-light text-dark"><i className="fas fa-exclamation-triangle text-warning"></i> Missing Setup</span>;
+        return (
+          <span className="badge bg-light text-dark">
+            <i className="fas fa-exclamation-triangle text-warning"></i> Missing
+            Setup
+          </span>
+        );
 
       case "1not_started":
         return <span className="badge bg-secondary">To Do</span>;
@@ -52,7 +58,8 @@ const VideosListView = () => {
           ? item.status !== null
           : item.status.toLowerCase() === filter
       )
-      .sort((a, b) => a.status > b.status ? 1 : -1)
+      .filter((item) => (item.titulo.toLowerCase()).includes(searchTerm))
+      .sort((a, b) => (a.status > b.status ? 1 : -1))
       .map((video) => {
         return (
           <tr key={video.id}>
@@ -61,7 +68,7 @@ const VideosListView = () => {
                 <i className="fab fa-youtube text-danger"></i>
               </a>
             </td>
-            <td className="align-middle">{trimToLength(video.titulo, 50)}</td>
+            <td className="align-middle">{trimToLength(video.titulo, 90)}</td>
             <td className="align-middle text-center">{video.duration}</td>
             <td className="align-middle text-center">
               <span
@@ -79,7 +86,7 @@ const VideosListView = () => {
             <td className="align-middle text-center">
               <Link
                 to={`/videos/${video.id}`}
-                className="btn btn-outline-secondary"
+                className="btn btn-outline-secondary btn-sm"
               >
                 <i className="fas fa-keyboard"></i>
               </Link>
@@ -121,8 +128,21 @@ const VideosListView = () => {
                 </select>
               </div>
             </div>
+            <div className="col">
+              <span className="wrapperInputSearch">
+                <input
+                  onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
+                  type="text"
+                  className="form-control"
+                  placeholder="Search for video title"
+                />
+              </span>
+            </div>
             <div className="col text-end">
-              <Link to="/submit-video" className="btn btn-danger mb-4 ms-auto shadow">
+              <Link
+                to="/submit-video"
+                className="btn btn-danger mb-4 ms-auto shadow"
+              >
                 <i className="fas fa-video me-2"></i> Submit new video
               </Link>
             </div>

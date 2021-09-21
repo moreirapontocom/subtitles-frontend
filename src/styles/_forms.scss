@@ -7,4 +7,28 @@ select {
         outline: none;
         box-shadow: none !important;
     }
+
+}
+
+.wrapperInputSearch {
+    position: relative;
+
+    &::before {
+        font-family: "FontAwesome";
+        color: #6e747b;
+        position: absolute;
+        top: 6px;
+        left: 0px;
+        content: "\f002";
+    }
+
+    input {
+        border: none;
+        background-color: transparent;
+        padding-left: 30px;
+
+        &:focus {
+            background-color: transparent;
+        }
+    }
 }
