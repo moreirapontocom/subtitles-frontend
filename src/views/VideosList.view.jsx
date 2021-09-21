@@ -5,6 +5,7 @@ import { getAllVideos } from "../services/videos.service";
 import { trimToLength } from "./../Utils";
 import PageHeader from "../components/PageHeader/PageHeader.component";
 import Navbar from "../components/Navbar/Navbar.component";
+import Footer from "../components/Footer/Footer.component";
 
 const VideosListView = () => {
   const [videos, setVideos] = useState([]);
@@ -165,6 +166,8 @@ const VideosListView = () => {
           </table>
         </div>
       </div>
+    
+      <Footer />
     </>
   );
 };

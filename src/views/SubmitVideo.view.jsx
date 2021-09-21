@@ -1,5 +1,6 @@
 import PageHeader from "./../components/PageHeader/PageHeader.component";
 import Navbar from "./../components/Navbar/Navbar.component";
+import Footer from "./../components/Footer/Footer.component";
 import SubmitVideo from "../components/SubmitVideo/SubmitVideo.component";
 
 const SubmitVideoView = () => {
@@ -19,6 +20,8 @@ const SubmitVideoView = () => {
           <SubmitVideo />
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

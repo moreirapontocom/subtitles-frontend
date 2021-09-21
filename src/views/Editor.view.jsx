@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar.component";
+import Footer from "../components/Footer/Footer.component";
 import PageHeader from "./../components/PageHeader/PageHeader.component";
 import Editor from "../components/Editor/Editor.component";
 import { useParams } from "react-router-dom";
@@ -82,6 +83,8 @@ const EditorView = () => {
           </If>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
