@@ -1,14 +1,18 @@
 @import "./../../styles/styles.scss";
 
+$baseSize: 30px;
+
 .Acronym {
     display: inline-block;
     text-align: center;
+    margin-top: -2px;
     background-color: $light-color-bg;
     border-radius: 50px;
-    line-height: 28px;
-    height: 28px;
-    width: 28px;
+    line-height: $baseSize;
+    height: $baseSize;
+    width: $baseSize;
     color: $dark-color;
     font-size: 0.7rem;
     text-align: center;
+    margin-right: 7px;
 }

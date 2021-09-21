@@ -38,16 +38,13 @@ const Navbar = (props) => {
 
               <If condition={user.id}>
                 <li className="nav-item">
-                  <NavLink to="/videos" activeClassName="active" className="nav-link">Meus vídeos</NavLink>
+                  <NavLink to="/videos" activeClassName="active" className="nav-link"><i className="fas fa-list me-2"></i> Meus vídeos</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/submit-video" activeClassName="active" className="nav-link">Enviar vídeo</NavLink>
+                  <NavLink to="/profile" activeClassName="active" className="nav-link"><Acronym name={user.name} /></NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/submit-video" activeClassName="active" className="nav-link"><Acronym name={user.name} /></NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink to="/auth" onClick={() => logout()} className="nav-link">Sair</NavLink>
+                  <NavLink to="/auth" onClick={() => logout()} className="nav-link"><i className="fas fa-sign-out-alt me-2"></i> Sair</NavLink>
                 </li>
               </If>
             </ul>

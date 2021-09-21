@@ -11,7 +11,7 @@ function Acronym(props) {
 
   return (
     <>
-      <span className="Acronym">{acronym.toUpperCase()}</span>
+      <span className="Acronym">{acronym.toUpperCase()}</span> {props.name}
     </>
   );
 }

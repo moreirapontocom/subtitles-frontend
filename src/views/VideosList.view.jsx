@@ -110,7 +110,7 @@ const VideosListView = () => {
 
       <div className="PageContent">
         <div className="container">
-          <div className="row">
+          <div className="row mb-4">
             <div className="col-3">
               <div className="input-group">
                 <div className="input-group-text">
@@ -122,10 +122,11 @@ const VideosListView = () => {
                   className="form-select"
                 >
                   <option value="all">All</option>
-                  <option value="not_started">To Do</option>
-                  <option value="completed">Complete</option>
-                  <option value="in_progress">In Progress</option>
-                  <option value="published">Published</option>
+                  <option value="0created">Missing setup</option>
+                  <option value="1not_started">To Do</option>
+                  <option value="2in_progress">In Progress</option>
+                  <option value="3completed">Complete</option>
+                  <option value="4published">Published</option>
                 </select>
               </div>
             </div>
@@ -142,7 +143,7 @@ const VideosListView = () => {
             <div className="col text-end">
               <Link
                 to="/submit-video"
-                className="btn btn-danger mb-4 ms-auto shadow"
+                className="btn btn-danger mb-4 ms-auto"
               >
                 <i className="fas fa-video me-2"></i> Submit new video
               </Link>

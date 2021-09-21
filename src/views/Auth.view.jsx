@@ -35,6 +35,7 @@ const AuthView = (props) => {
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       id="email"
+                      autoComplete="off"
                       className="form-control"
                     />
                   </div>
@@ -46,6 +47,7 @@ const AuthView = (props) => {
                       onChange={(e) => setPassword(e.target.value)}
                       type="password"
                       id="password"
+                      autoComplete="off"
                       className="form-control"
                     />
                   </div>

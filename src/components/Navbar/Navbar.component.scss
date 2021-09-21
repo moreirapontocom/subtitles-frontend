@@ -4,6 +4,10 @@ nav {
     &.navbar {
         margin-bottom: 0;
 
+        .nav-item {
+            padding-top: 3px;
+        }
+
         &.bg-dark {
             background-color: darken($color: $dark-color-bg, $amount: 2) !important;
         }
