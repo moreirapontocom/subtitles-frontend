@@ -5,7 +5,7 @@ import LandingView from "./views/Landing.view";
 import ProfileView from "./views/Profile.view";
 import VideosListView from "./views/VideosList.view";
 import SubmitVideoView from "./views/SubmitVideo.view";
-import RoutePrivate from "./components/Auth/RoutePrivate.component";
+import RoutePrivate from "./App.routes.private.component";
 
 const Routes = () => {
   return (
