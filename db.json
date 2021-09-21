@@ -6,13 +6,13 @@
       "description": "O Felipe mora no Canadá com a Renata",
       "cover": "https://i.ytimg.com/vi/2_FJrmft3uQ/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=2_FJrmft3uQ",
-      "duration": "1:30",
+      "duration": "05:23",
       "lang": {
         "original": "br",
         "target": "us"
       },
       "subtitles": "Olá pessoal! Aqui tem o início da legenda que eu ainda não terminei",
-      "status": "not_started",
+      "status": "1not_started",
       "startedAt": "2020-01-01 10:12:25",
       "updatedAt": "2020-01-05 23:00:12"
     },
@@ -22,43 +22,58 @@
       "description": "Patrick tá nos eua",
       "cover": "https://i.ytimg.com/vi/EvJR-uBrPpo/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=EvJR-uBrPpo",
-      "duration": "1:30",
+      "duration": "01:30",
       "lang": {
         "original": "br",
         "target": "br"
       },
       "subtitles": "Salve salve quebrada! Como é que tamo?",
-      "status": "completed",
+      "status": "3completed",
       "startedAt": "2020-01-01 10:12:25",
       "updatedAt": "2020-01-05 23:00:12"
     },
     {
-      "id": 0.15430667857624392,
-      "titulo": "COLD START FUSION V6 SÓ O CANO",
-      "description": "",
-      "cover": "https://i.ytimg.com/vi/qBwVWjPEeGs/default.jpg",
-      "url": "https://www.youtube.com/watch?v=qBwVWjPEeGs",
-      "duration": "FALTA",
-      "lang": {
-        "original": "PT",
-        "target": "EN"
-      },
-      "status": "not_started",
-      "startedAt": "2020-01-01 10:12:25",
-      "updatedAt": "2020-01-05 23:00:12"
-    },
-    {
-      "id": 0.11339085377968416,
+      "id": 1339085377968416,
       "titulo": "EXPLORANDO ruas de NEWARK! Comunidade Brazuca, Coxinha, Rutgers University e Bairro dos Negros",
       "description": "Hoje nosso role foi com o parceiro Felipe, que mora na região de New Jersey e levou a gente para um rolê em Newark, a maior cidade de New Jersey. Além disso tambem passamos em uma lanchonete brasileira e pegamos uma Coxinha! kkkkkk\n\nQuer apoiar o Batrick? Manda um Pix: livebatrick@gmail.com\n\n🌎 Encontre o Batrick nas Redes: 🌎https://www.instagram.com/opatricklopes/\n\nFotografia e Vídeos http://opatricklopes.com/ ⚡️\n\n🌻 Agendamento de tours em NYC 2021: roledaquebrada@gmail.com \n\n🎧 Se inscreva com meu link e use minha biblioteca de sons sem problemas com copyright: http://share.epidemicsound.com/lSTNn\n\n00:00 início\n00:39 Apresentação\n01:59 IRON BOUND\n32:39 Newark Penn Station\n41:33 Centro de Newark\n51:57 Prudential Center\n58:07 Teatro Desativado de Newark\n1:00:46 Bairro dos Negros Americanos\n1:14:27 Rutgers University\n1:31:57 Memorial Park - Newark\n1:47:52 Ironbound (Comunidade BR)\n2:03:41 Parada para Coxinha e Kibe\n2:21:40 ironbound\n2:34:56 FIM",
       "cover": "https://i.ytimg.com/vi/75QmUkdXo8Q/default.jpg",
       "url": "https://www.youtube.com/watch?v=75QmUkdXo8Q",
-      "duration": "FALTA",
+      "duration": "01:10:22",
       "lang": {
-        "original": "BR",
-        "target": "BR"
+        "original": "br",
+        "target": "br"
       },
-      "status": "not_started",
+      "status": "2in_progress",
+      "startedAt": "2020-01-01 10:12:25",
+      "updatedAt": "2020-01-05 23:00:12"
+    },
+    {
+      "id": 7968416,
+      "titulo": "Mais um vídeo qualquer aqui que eu copiei do link do Patrick",
+      "description": "Hoje nosso role foi com o parceiro Felipe, que mora na região de New Jersey e levou a gente para um rolê em Newark, a maior cidade de New Jersey. Além disso tambem passamos em uma lanchonete brasileira e pegamos uma Coxinha! kkkkkk\n\nQuer apoiar o Batrick? Manda um Pix: livebatrick@gmail.com\n\n🌎 Encontre o Batrick nas Redes: 🌎https://www.instagram.com/opatricklopes/\n\nFotografia e Vídeos http://opatricklopes.com/ ⚡️\n\n🌻 Agendamento de tours em NYC 2021: roledaquebrada@gmail.com \n\n🎧 Se inscreva com meu link e use minha biblioteca de sons sem problemas com copyright: http://share.epidemicsound.com/lSTNn\n\n00:00 início\n00:39 Apresentação\n01:59 IRON BOUND\n32:39 Newark Penn Station\n41:33 Centro de Newark\n51:57 Prudential Center\n58:07 Teatro Desativado de Newark\n1:00:46 Bairro dos Negros Americanos\n1:14:27 Rutgers University\n1:31:57 Memorial Park - Newark\n1:47:52 Ironbound (Comunidade BR)\n2:03:41 Parada para Coxinha e Kibe\n2:21:40 ironbound\n2:34:56 FIM",
+      "cover": "https://i.ytimg.com/vi/75QmUkdXo8Q/default.jpg",
+      "url": "https://www.youtube.com/watch?v=75QmUkdXo8Q",
+      "duration": "01:10:22",
+      "lang": {
+        "original": "br",
+        "target": "br"
+      },
+      "status": "4published",
+      "startedAt": "2020-01-01 10:12:25",
+      "updatedAt": "2020-01-05 23:00:12"
+    },
+    {
+      "id": 796234138416,
+      "titulo": "Falta terminar de configurar este vídeo para ficar disponível pra alguém trabalhar nele",
+      "description": "Hoje nosso role foi com o parceiro Felipe, que mora na região de New Jersey e levou a gente para um rolê em Newark, a maior cidade de New Jersey. Além disso tambem passamos em uma lanchonete brasileira e pegamos uma Coxinha! kkkkkk\n\nQuer apoiar o Batrick? Manda um Pix: livebatrick@gmail.com\n\n🌎 Encontre o Batrick nas Redes: 🌎https://www.instagram.com/opatricklopes/\n\nFotografia e Vídeos http://opatricklopes.com/ ⚡️\n\n🌻 Agendamento de tours em NYC 2021: roledaquebrada@gmail.com \n\n🎧 Se inscreva com meu link e use minha biblioteca de sons sem problemas com copyright: http://share.epidemicsound.com/lSTNn\n\n00:00 início\n00:39 Apresentação\n01:59 IRON BOUND\n32:39 Newark Penn Station\n41:33 Centro de Newark\n51:57 Prudential Center\n58:07 Teatro Desativado de Newark\n1:00:46 Bairro dos Negros Americanos\n1:14:27 Rutgers University\n1:31:57 Memorial Park - Newark\n1:47:52 Ironbound (Comunidade BR)\n2:03:41 Parada para Coxinha e Kibe\n2:21:40 ironbound\n2:34:56 FIM",
+      "cover": "https://i.ytimg.com/vi/75QmUkdXo8Q/default.jpg",
+      "url": "https://www.youtube.com/watch?v=75QmUkdXo8Q",
+      "duration": "01:10:22",
+      "lang": {
+        "original": "br",
+        "target": "us"
+      },
+      "status": "0created",
       "startedAt": "2020-01-01 10:12:25",
       "updatedAt": "2020-01-05 23:00:12"
     }

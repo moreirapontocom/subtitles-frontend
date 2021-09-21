@@ -1,1 +1,10 @@
 @import "./_variables.scss";
+
+input,
+select {
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: none !important;
+    }
+}

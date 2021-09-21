@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar/Navbar.component";
 
 const VideosListView = () => {
   const [videos, setVideos] = useState([]);
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     getVideos();
@@ -20,14 +21,24 @@ const VideosListView = () => {
 
   function getJobStatusDescription(jobStatus) {
     switch (jobStatus) {
-      case "completed":
-        return <span className="badge bg-success">Complete</span>;
+      case "0created":
+        return <span className="badge bg-light text-dark"><i className="fas fa-exclamation-triangle text-warning"></i> Missing Setup</span>;
 
-      case "not_started":
+      case "1not_started":
         return <span className="badge bg-secondary">To Do</span>;
 
-      case "in_progress":
+      case "2in_progress":
         return <span className="badge bg-primary">In Progress</span>;
+
+      case "3completed":
+        return <span className="badge bg-success">Complete</span>;
+
+      case "4published":
+        return (
+          <span className="badge bg-danger">
+            Published <i className="fab fa-youtube"></i>
+          </span>
+        );
 
       default:
         return <span className="badge bg-primary">--</span>;
@@ -35,47 +46,47 @@ const VideosListView = () => {
   }
 
   function mapVideos() {
-    return videos.map((video) => {
-      return (
-        <tr key={video.url}>
-          <td style={{ backgroundColor: 'black', width: '134px' }} className="text-center p-0">
-            <img src={video.cover} alt={video.titulo} height="100" />
-          </td>
-          <td className="align-middle">
-            <div>
-              <a
-                href={video.url}
-                target="_blank"
-                rel="noreferrer"
-                className="me-3"
-              >
+    return videos
+      .filter((item) =>
+        filter === "all"
+          ? item.status !== null
+          : item.status.toLowerCase() === filter
+      )
+      .sort((a, b) => a.status > b.status ? 1 : -1)
+      .map((video) => {
+        return (
+          <tr key={video.id}>
+            <td className="align-middle text-center">
+              <a href={video.url} target="_blank" rel="noreferrer">
                 <i className="fab fa-youtube text-danger"></i>
               </a>
-              {trimToLength(video.titulo, 50)}
-            </div>
-          </td>
-          <td className="align-middle text-center">
-            <span
-              className={`flag-icon flag-icon-${video.lang.original}`}
-            ></span>
-          </td>
-          <td className="align-middle text-center">
-            <span className={`flag-icon flag-icon-${video.lang.target}`}></span>
-          </td>
-          <td className="align-middle text-center">
-            {getJobStatusDescription(video.status)}
-          </td>
-          <td className="align-middle text-center">
-            <Link
-              to={`/videos/${video.id}`}
-              className="btn btn-outline-secondary"
-            >
-              <i className="fas fa-keyboard"></i>
-            </Link>
-          </td>
-        </tr>
-      );
-    });
+            </td>
+            <td className="align-middle">{trimToLength(video.titulo, 50)}</td>
+            <td className="align-middle text-center">{video.duration}</td>
+            <td className="align-middle text-center">
+              <span
+                className={`flag-icon flag-icon-${video.lang.original}`}
+              ></span>
+            </td>
+            <td className="align-middle text-center">
+              <span
+                className={`flag-icon flag-icon-${video.lang.target}`}
+              ></span>
+            </td>
+            <td className="align-middle text-center">
+              {getJobStatusDescription(video.status)}
+            </td>
+            <td className="align-middle text-center">
+              <Link
+                to={`/videos/${video.id}`}
+                className="btn btn-outline-secondary"
+              >
+                <i className="fas fa-keyboard"></i>
+              </Link>
+            </td>
+          </tr>
+        );
+      });
   }
 
   return (
@@ -83,17 +94,47 @@ const VideosListView = () => {
       <Navbar authenticated={true} />
 
       <div className="PageHeader">
-        <PageHeader title={`Videos List (${videos.length})`} description="Videos List Description comes here" />
+        <PageHeader
+          title={`Videos List`}
+          description="Videos List Description comes here"
+        />
       </div>
 
       <div className="PageContent">
         <div className="container">
-          <table className="table table-bordered caption-top">
+          <div className="row">
+            <div className="col-3">
+              <div className="input-group">
+                <div className="input-group-text">
+                  <i className="fas fa-filter"></i>
+                </div>
+                <select
+                  defaultValue={filter}
+                  onChange={(e) => setFilter(e.target.value)}
+                  className="form-select"
+                >
+                  <option value="all">All</option>
+                  <option value="not_started">To Do</option>
+                  <option value="completed">Complete</option>
+                  <option value="in_progress">In Progress</option>
+                  <option value="published">Published</option>
+                </select>
+              </div>
+            </div>
+            <div className="col text-end">
+              <Link to="/submit-video" className="btn btn-danger mb-4 ms-auto shadow">
+                <i className="fas fa-video me-2"></i> Submit new video
+              </Link>
+            </div>
+          </div>
+
+          <table className="table table-bordered table-striped caption-top">
             <caption>{videos.length} videos found</caption>
             <thead>
               <tr>
-                <th>Thumbnail</th>
-                <th>Title</th>
+                <th></th>
+                <th>Video title</th>
+                <th className="text-center">Duration</th>
                 <th className="text-center">Original</th>
                 <th className="text-center">Target</th>
                 <th className="text-center">Job Status</th>
