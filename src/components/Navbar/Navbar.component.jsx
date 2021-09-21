@@ -4,6 +4,7 @@ import If from "../If/If.component";
 import { setUser } from "../../state/actions/user.actions";
 import { useHistory } from "react-router-dom";
 import "./Navbar.component.scss";
+import Acronym from "../Acronym/Acronym.component";
 
 const Navbar = (props) => {
   const history = useHistory();
@@ -41,6 +42,9 @@ const Navbar = (props) => {
                 </li>
                 <li className="nav-item">
                   <NavLink to="/submit-video" activeClassName="active" className="nav-link">Enviar vídeo</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/submit-video" activeClassName="active" className="nav-link"><Acronym name={user.name} /></NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink to="/auth" onClick={() => logout()} className="nav-link">Sair</NavLink>

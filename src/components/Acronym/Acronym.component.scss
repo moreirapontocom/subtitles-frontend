@@ -1,0 +1,14 @@
+@import "./../../styles/styles.scss";
+
+.Acronym {
+    display: inline-block;
+    text-align: center;
+    background-color: $light-color-bg;
+    border-radius: 50px;
+    line-height: 28px;
+    height: 28px;
+    width: 28px;
+    color: $dark-color;
+    font-size: 0.7rem;
+    text-align: center;
+}
