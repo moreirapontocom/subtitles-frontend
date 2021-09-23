@@ -11,7 +11,15 @@ const Auth = {
 
   isAuthenticated() {
     return this.authenticated;
-  }
-}
+  },
+
+  // getUser() {
+  //   return localStorage.getItem("user");
+  // },
+
+  // setUser(user) {
+  //   localStorage.setItem("user", JSON.stringify(user));
+  // },
+};
 
 export default Auth;

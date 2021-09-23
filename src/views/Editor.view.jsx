@@ -32,13 +32,13 @@ const EditorView = () => {
       <Navbar authenticated={true} />
 
       <div className="PageHeader with-tabs">
-        <PageHeader title={video.titulo} description={video.description} />
+        <PageHeader title={video.title} description={video.description} />
 
         <div className="container">
-          <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
+          <ul className="nav nav-tabs mt-4" id="myTab" role="tablist">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link active"
+                className="nav-link active"
                 id="editor-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#editor"
@@ -50,9 +50,9 @@ const EditorView = () => {
                 Editor
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
-                class="nav-link"
+                className="nav-link"
                 id="settings-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#settings"
@@ -72,11 +72,11 @@ const EditorView = () => {
       <div className="PageContent">
         <div className="container">
           <If condition={video}>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane show active" id="editor" role="tabpanel" aria-labelledby="editor-tab">
+            <div className="tab-content" id="myTabContent">
+              <div className="tab-pane show active" id="editor" role="tabpanel" aria-labelledby="editor-tab">
                 <Editor video={video} />
               </div>
-              <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+              <div className="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
               <button onClick={() => removeVideo(video.id)} type="button" className="btn btn-outline-danger">Remove Video</button>
               </div>
             </div>

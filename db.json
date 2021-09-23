@@ -9,81 +9,84 @@
   ],
   "videos": [
     {
-      "id": 2,
-      "titulo": "Vídeo do Felipe",
-      "description": "O Felipe mora no Canadá com a Renata",
-      "cover": "https://i.ytimg.com/vi/2_FJrmft3uQ/hqdefault.jpg",
+      "id": 0.2972219371251692,
+      "titulo": "MINHA OPINIÃO: Qual a melhor linguagem para começar a programar?",
+      "description": "Como começar a programar e com qual linguagem começar a programar são duas dúvidas extremamente comuns. Neste vídeo eu tento fazer duas sugestões: uma sem saber nada do seu contexto e outra tentando adivinhar alguma situação em específico, como por exemplo, desenvolvimento para jogos.\n\n✅ 𝗚𝗢𝗦𝗧𝗔 𝗗𝗘 𝗡𝗢𝗧𝗜𝗖𝗜𝗔𝗦 𝗦𝗢𝗕𝗥𝗘 𝗧𝗘𝗖𝗡𝗢𝗟𝗢𝗚𝗜𝗔?\n\n▸ Então você vai pirar nisso: https://filipedeschamps.com.br/newsletter\n\n\n✅ 𝗦𝗘𝗝𝗔 𝗨𝗠 𝗠𝗘𝗠𝗕𝗥𝗢 𝗗𝗔 𝗧𝗨𝗥𝗠𝗔!\n\n▸ Te convido a se tornar um Membro da Turma! Dessa forma, o canal pode continuar a criar conteúdos de forma independente e para todos!\nhttps://youtu.be/9QA_Iz68grY\n\n✅ 𝗟𝗜𝗡𝗞𝗦 𝗖𝗜𝗧𝗔𝗗𝗢𝗦 𝗡𝗢 𝗩Í𝗗𝗘𝗢\n\n▸ Cartão em NPX da Glaucia: https://github.com/glaucia86/glaucia86\n▸ Vídeo do Fogo do Doom: https://www.youtube.com/watch?v=HCjDjsHPOco\n\n\n✅ VAGAS PAGAR.ME\n\n▸ https://boards.greenhouse.io/pagarme/\n\n\n✅ 𝗢𝗦 𝗠𝗘𝗟𝗛𝗢𝗥𝗘𝗦 𝗩𝗜𝗗𝗘𝗢𝗦 𝗗𝗢 𝗖𝗔𝗡𝗔𝗟\n\n▸ Preguiça: Descobri Como Consertar o Meu Maior Problema\nhttps://youtu.be/rHANBi7E2cI\n\n▸ 3 Técnicas Que Eu Uso Para Aprender a Programar Qualquer Coisa\nhttps://youtu.be/ZtMzB5CoekE\n\n▸ SOLID fica FÁCIL com Essas Ilustrações\nhttps://youtu.be/6SfrO3D4dHM\n\n▸ Eu fiz um dos melhores cursos de Programação do Mundo!\nhttps://youtu.be/elIl48sZ3rA\n\n▸ Desafio: 10 projetos rápidos para treinar Programação e conseguir um Emprego\nhttps://youtu.be/fYR9L2ZmodM",
+      "cover": "https://i.ytimg.com/vi/2_FJrmft3uQ/default.jpg",
       "url": "https://www.youtube.com/watch?v=2_FJrmft3uQ",
-      "duration": "05:23",
-      "lang": {
-        "original": "br",
-        "target": "us"
-      },
-      "subtitles": "Olá pessoal! Aqui tem o início da legenda que eu ainda não terminei",
-      "status": "1not_started",
-      "startedAt": "2020-01-01 10:12:25",
-      "updatedAt": "2020-01-05 23:00:12"
-    },
-    {
-      "id": 3,
-      "titulo": "Salve Batrick",
-      "description": "Patrick tá nos eua",
-      "cover": "https://i.ytimg.com/vi/EvJR-uBrPpo/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=EvJR-uBrPpo",
-      "duration": "01:30",
+      "duration": null,
       "lang": {
         "original": "br",
         "target": "br"
       },
-      "subtitles": "Salve salve quebrada! Como é que tamo?",
-      "status": "3completed",
-      "startedAt": "2020-01-01 10:12:25",
-      "updatedAt": "2020-01-05 23:00:12"
+      "status": "1not_started",
+      "createdAt": "2021-09-22T16:08:48.164Z",
+      "startedAt": null,
+      "updatedAt": null,
+      "channel": {
+        "id": "UCU5JicSrEM5A63jkJ2QvGYw",
+        "title": "Filipe Deschamps"
+      }
     },
     {
-      "id": 1339085377968416,
+      "id": 0.6709300242334475,
+      "titulo": "últimos dias de sol em New York",
+      "description": "Nosso feriado de Labor Day em 2021!\n\n🌎 Encontre o Batrick nas Redes: 🌎https://www.instagram.com/opatricklopes/\n\nFotografia e Vídeos http://opatricklopes.com/ ⚡️\n\n🌻 Agendamento de tours em NYC 2021: roledaquebrada@gmail.com \n\n🎧  Se inscreva com meu link e use minha biblioteca de sons sem problemas com copyright: http://share.epidemicsound.com/lSTNn",
+      "cover": "https://i.ytimg.com/vi/EvJR-uBrPpo/default.jpg",
+      "url": "https://www.youtube.com/watch?v=EvJR-uBrPpo",
+      "duration": null,
+      "lang": {
+        "original": "br",
+        "target": "br"
+      },
+      "status": "1not_started",
+      "createdAt": "2021-09-22T16:10:31.747Z",
+      "startedAt": null,
+      "updatedAt": null,
+      "channel": {
+        "id": "UCYQF6iGyVuLRUgxGbsW5zrg",
+        "title": "Patrick Lopes"
+      }
+    },
+    {
+      "id": 0.39804020397398987,
       "titulo": "EXPLORANDO ruas de NEWARK! Comunidade Brazuca, Coxinha, Rutgers University e Bairro dos Negros",
       "description": "Hoje nosso role foi com o parceiro Felipe, que mora na região de New Jersey e levou a gente para um rolê em Newark, a maior cidade de New Jersey. Além disso tambem passamos em uma lanchonete brasileira e pegamos uma Coxinha! kkkkkk\n\nQuer apoiar o Batrick? Manda um Pix: livebatrick@gmail.com\n\n🌎 Encontre o Batrick nas Redes: 🌎https://www.instagram.com/opatricklopes/\n\nFotografia e Vídeos http://opatricklopes.com/ ⚡️\n\n🌻 Agendamento de tours em NYC 2021: roledaquebrada@gmail.com \n\n🎧 Se inscreva com meu link e use minha biblioteca de sons sem problemas com copyright: http://share.epidemicsound.com/lSTNn\n\n00:00 início\n00:39 Apresentação\n01:59 IRON BOUND\n32:39 Newark Penn Station\n41:33 Centro de Newark\n51:57 Prudential Center\n58:07 Teatro Desativado de Newark\n1:00:46 Bairro dos Negros Americanos\n1:14:27 Rutgers University\n1:31:57 Memorial Park - Newark\n1:47:52 Ironbound (Comunidade BR)\n2:03:41 Parada para Coxinha e Kibe\n2:21:40 ironbound\n2:34:56 FIM",
       "cover": "https://i.ytimg.com/vi/75QmUkdXo8Q/default.jpg",
       "url": "https://www.youtube.com/watch?v=75QmUkdXo8Q",
-      "duration": "01:10:22",
+      "duration": null,
       "lang": {
         "original": "br",
         "target": "br"
       },
-      "status": "2in_progress",
-      "startedAt": "2020-01-01 10:12:25",
-      "updatedAt": "2020-01-05 23:00:12"
+      "status": "1not_started",
+      "createdAt": "2021-09-22T16:10:38.250Z",
+      "startedAt": null,
+      "updatedAt": null,
+      "channel": {
+        "id": "UCYQF6iGyVuLRUgxGbsW5zrg",
+        "title": "Patrick Lopes"
+      }
     },
     {
-      "id": 7968416,
-      "titulo": "Mais um vídeo qualquer aqui que eu copiei do link do Patrick",
-      "description": "Hoje nosso role foi com o parceiro Felipe, que mora na região de New Jersey e levou a gente para um rolê em Newark, a maior cidade de New Jersey. Além disso tambem passamos em uma lanchonete brasileira e pegamos uma Coxinha! kkkkkk\n\nQuer apoiar o Batrick? Manda um Pix: livebatrick@gmail.com\n\n🌎 Encontre o Batrick nas Redes: 🌎https://www.instagram.com/opatricklopes/\n\nFotografia e Vídeos http://opatricklopes.com/ ⚡️\n\n🌻 Agendamento de tours em NYC 2021: roledaquebrada@gmail.com \n\n🎧 Se inscreva com meu link e use minha biblioteca de sons sem problemas com copyright: http://share.epidemicsound.com/lSTNn\n\n00:00 início\n00:39 Apresentação\n01:59 IRON BOUND\n32:39 Newark Penn Station\n41:33 Centro de Newark\n51:57 Prudential Center\n58:07 Teatro Desativado de Newark\n1:00:46 Bairro dos Negros Americanos\n1:14:27 Rutgers University\n1:31:57 Memorial Park - Newark\n1:47:52 Ironbound (Comunidade BR)\n2:03:41 Parada para Coxinha e Kibe\n2:21:40 ironbound\n2:34:56 FIM",
-      "cover": "https://i.ytimg.com/vi/75QmUkdXo8Q/default.jpg",
-      "url": "https://www.youtube.com/watch?v=75QmUkdXo8Q",
-      "duration": "01:10:22",
+      "id": 0.6037844813947557,
+      "titulo": "A técnica que eu uso para validar minhas ideias de negócios e economizar tempo e dinheiro",
+      "description": "Está é a técnica que eu já utilizo há algum tempo para validar minhas ideias de negócio e tem me ajudado muito a economizar tempo, dinheiro e energia. Tempo que eu posso investir em algo que trará resultados.",
+      "cover": "https://i.ytimg.com/vi/0GDI1GScv0M/default.jpg",
+      "url": "https://www.youtube.com/watch?v=0GDI1GScv0M",
+      "duration": null,
       "lang": {
         "original": "br",
         "target": "br"
       },
-      "status": "4published",
-      "startedAt": "2020-01-01 10:12:25",
-      "updatedAt": "2020-01-05 23:00:12"
-    },
-    {
-      "id": 796234138416,
-      "titulo": "Falta terminar de configurar este vídeo para ficar disponível pra alguém trabalhar nele",
-      "description": "Hoje nosso role foi com o parceiro Felipe, que mora na região de New Jersey e levou a gente para um rolê em Newark, a maior cidade de New Jersey. Além disso tambem passamos em uma lanchonete brasileira e pegamos uma Coxinha! kkkkkk\n\nQuer apoiar o Batrick? Manda um Pix: livebatrick@gmail.com\n\n🌎 Encontre o Batrick nas Redes: 🌎https://www.instagram.com/opatricklopes/\n\nFotografia e Vídeos http://opatricklopes.com/ ⚡️\n\n🌻 Agendamento de tours em NYC 2021: roledaquebrada@gmail.com \n\n🎧 Se inscreva com meu link e use minha biblioteca de sons sem problemas com copyright: http://share.epidemicsound.com/lSTNn\n\n00:00 início\n00:39 Apresentação\n01:59 IRON BOUND\n32:39 Newark Penn Station\n41:33 Centro de Newark\n51:57 Prudential Center\n58:07 Teatro Desativado de Newark\n1:00:46 Bairro dos Negros Americanos\n1:14:27 Rutgers University\n1:31:57 Memorial Park - Newark\n1:47:52 Ironbound (Comunidade BR)\n2:03:41 Parada para Coxinha e Kibe\n2:21:40 ironbound\n2:34:56 FIM",
-      "cover": "https://i.ytimg.com/vi/75QmUkdXo8Q/default.jpg",
-      "url": "https://www.youtube.com/watch?v=75QmUkdXo8Q",
-      "duration": "01:10:22",
-      "lang": {
-        "original": "br",
-        "target": "us"
-      },
-      "status": "0created",
-      "startedAt": "2020-01-01 10:12:25",
-      "updatedAt": "2020-01-05 23:00:12"
+      "status": "1not_started",
+      "createdAt": "2021-09-22T16:10:44.070Z",
+      "startedAt": null,
+      "updatedAt": null,
+      "channel": {
+        "id": "UC87FNdJ0-t9GEXiQbCA4G-A",
+        "title": "Lucas Moreira"
+      }
     }
   ]
 }

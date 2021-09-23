@@ -95,18 +95,16 @@ const Editor = (props) => {
           </div>
 
           <div className="row">
-            <div className="col">
-              <div className="btn-group" role="group" aria-label="Basic example">
-                {playing ? (
-                  <button onClick={() => doPlayerAction("pause")} type="button" className="btn btn-secondary">
-                    <i className="fas fa-pause"></i> Pause
-                  </button>
-                ) : (
-                  <button onClick={() => doPlayerAction("play")} type="button" className="btn btn-secondary">
-                    <i className="fas fa-play"></i> Play
-                  </button>
-                )}
-              </div>
+            <div className="col-3">
+              {playing ? (
+                <button onClick={() => doPlayerAction("pause")} type="button" className="btn btn-secondary">
+                  <i className="fas fa-pause"></i> Pause
+                </button>
+              ) : (
+                <button onClick={() => doPlayerAction("play")} type="button" className="btn btn-secondary">
+                  <i className="fas fa-play"></i> Play
+                </button>
+              )}
             </div>
             <div className="col text-end">
 
@@ -114,12 +112,15 @@ const Editor = (props) => {
                 <button onClick={() => submitCaption("draft")} type="button" className="btn btn-primary me-1">
                   <i className="fas fa-check"></i> Save Draft
                 </button>
+                <button onClick={() => submitCaption("draft")} type="button" className="btn btn-primary me-1">
+                  <i className="fas fa-check"></i> Complete
+                </button>
                 <button
                   onClick={() => submitCaption("publish")}
                   type="button"
-                  className="btn btn-success"
+                  className="btn btn-danger"
                 >
-                  <i className="fas fa-check"></i> Publish
+                  <i className="fab fa-youtube"></i> Publish
                 </button>
               </div>
 

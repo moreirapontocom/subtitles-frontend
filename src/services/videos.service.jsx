@@ -1,16 +1,16 @@
-const API = "http://localhost:3004";
+const API = "http://localhost:8055/items"; // Directus Headless CMS API
 const youtubeApiKey = "AIzaSyC-FhFJq7JYcqio6AKMSCpxmMXcUBrDg7o";
 
 export function getAllVideos() {
   return fetch(`${API}/videos`)
     .then((res) => res.json())
-    .then((data) => data);
+    .then((data) => data.data);
 }
 
 export function getVideoById(videoId) {
   return fetch(`${API}/videos/${videoId}`)
     .then((res) => res.json())
-    .then((data) => data);
+    .then((data) => data.data);
 }
 
 export function addVideo(video) {
@@ -28,6 +28,44 @@ export function removeVideoById(videoId) {
     method: "DELETE",
   }).then((res) => res.json());
 }
+
+/*
+GET VIDEO CC SNIPPET INFOS
+curl \
+  'https://youtube.googleapis.com/youtube/v3/captions?part=snippet&videoId=0GDI1GScv0M&key=[YOUR_API_KEY]' \
+  --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
+  --header 'Accept: application/json' \
+  --compressed
+
+
+  RETORNO
+  {
+  "kind": "youtube#captionListResponse",
+  "etag": "aj0xnM0_K41MqhvdNYbaaBuZQCQ",
+  "items": [
+    {
+      "kind": "youtube#caption",
+      "etag": "BVqHnZEisji_5zPFaQBx2OoLZh0",
+      "id": "SH0WAaDNRTo-oSafYTNc80qLlP4e2VBI",
+      "snippet": {
+        "videoId": "0GDI1GScv0M",
+        "lastUpdated": "2021-09-22T15:55:51.883377Z",
+        "trackKind": "standard",
+        "language": "pt",
+        "name": "",
+        "audioTrackType": "unknown",
+        "isCC": false,
+        "isLarge": false,
+        "isEasyReader": false,
+        "isDraft": false,
+        "isAutoSynced": false,
+        "status": "serving"
+      }
+    }
+  ]
+}
+
+*/
 
 export function getVideoSnippetFromYoutubeVideoUrl(youtubeVideoUrl) {
   const youtubeApiUrl =

@@ -54,12 +54,12 @@ const VideosListView = () => {
 
   function mapVideos() {
     return videos
-      .filter((item) =>
+      .filter((item, index) =>
         filter === "all"
           ? item.status !== null
           : item.status.toLowerCase() === filter
       )
-      .filter((item) => (item.titulo.toLowerCase()).includes(searchTerm))
+      .filter((item) => (item.title.toLowerCase()).includes(searchTerm))
       .sort((a, b) => (a.status > b.status ? 1 : -1))
       .map((video) => {
         return (
@@ -69,16 +69,18 @@ const VideosListView = () => {
                 <i className="fab fa-youtube text-danger"></i>
               </a>
             </td>
-            <td className="align-middle">{trimToLength(video.titulo, 90)}</td>
-            <td className="align-middle text-center">{video.duration}</td>
-            <td className="align-middle text-center">
-              <span
-                className={`flag-icon flag-icon-${video.lang.original}`}
-              ></span>
+            <td>
+              {video.channel_title}
             </td>
+            <td className="align-middle">{trimToLength(video.title, 90)}</td>
+            <td className="align-middle text-center">{video.duration ?? '--'}</td>
             <td className="align-middle text-center">
               <span
-                className={`flag-icon flag-icon-${video.lang.target}`}
+                className={`flag-icon flag-icon-${video.language_original}`}
+              ></span>
+              <i className="fas fa-chevron-right ms-3 me-3"></i>
+              <span
+                className={`flag-icon flag-icon-${video.language_target}`}
               ></span>
             </td>
             <td className="align-middle text-center">
@@ -121,12 +123,18 @@ const VideosListView = () => {
                   onChange={(e) => setFilter(e.target.value)}
                   className="form-select"
                 >
-                  <option value="all">All</option>
-                  <option value="0created">Missing setup</option>
-                  <option value="1not_started">To Do</option>
-                  <option value="2in_progress">In Progress</option>
-                  <option value="3completed">Complete</option>
-                  <option value="4published">Published</option>
+                  <optgroup label="Status">
+                    <option value="all">All</option>
+                    <option value="0created">Missing setup</option>
+                    <option value="1not_started">To Do</option>
+                    <option value="2in_progress">In Progress</option>
+                    <option value="3completed">Complete</option>
+                    <option value="4published">Published</option>
+                  </optgroup>
+                  <optgroup label="Channel">
+                    <option value="channel1">Channel ID 1</option>
+                    <option value="channel2">Channel ID 2</option>
+                  </optgroup>
                 </select>
               </div>
             </div>
@@ -155,10 +163,10 @@ const VideosListView = () => {
             <thead>
               <tr>
                 <th></th>
+                <th>Channel</th>
                 <th>Video title</th>
                 <th className="text-center">Duration</th>
-                <th className="text-center">Original</th>
-                <th className="text-center">Target</th>
+                <th className="text-center">Language</th>
                 <th className="text-center">Job Status</th>
                 <th className="text-right"></th>
               </tr>

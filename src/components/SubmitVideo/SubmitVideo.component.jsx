@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { getVideoSnippetFromYoutubeVideoUrl, addVideo } from "./../../services/videos.service";
 import "./../../styles/styles.scss";
 
+// https://www.youtube.com/watch?v=2_FJrmft3uQ Felipe
+// https://www.youtube.com/watch?v=EvJR-uBrPpo Patrick
+// https://www.youtube.com/watch?v=75QmUkdXo8Q Patrick 2
+// https://www.youtube.com/watch?v=0GDI1GScv0M Lucas
+
 const SubmitVideo = (props) => {
   const [videoUrl, setVideoUrl] = useState("");
 
@@ -11,18 +16,19 @@ const SubmitVideo = (props) => {
     const videoSnippet = await getVideoSnippetFromYoutubeVideoUrl(videoUrl);
     addVideo({
       id: Math.random(),
-      titulo: videoSnippet.title,
+      title: videoSnippet.title,
       description: videoSnippet.description,
       cover: videoSnippet.thumbnails.default.url,
       url: videoUrl,
-      duration: "FALTA",
-      lang: {
-        original: "BR",
-        target: "BR",
-      },
-      status: "not_started",
-      startedAt: "2020-01-01 10:12:25",
-      updatedAt: "2020-01-05 23:00:12",
+      duration: null,
+      language_original: "br",
+      language_target: "br",
+      status: "1not_started",
+      createdAt: (new Date()).toISOString(),
+      startedAt: null,
+      updatedAt: null,
+      channel_id: videoSnippet.channelId,
+      channel_title: videoSnippet.channelTitle
     });
     setVideoUrl("");
   }
