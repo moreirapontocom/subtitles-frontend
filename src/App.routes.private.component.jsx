@@ -2,20 +2,13 @@ import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 const RoutePrivate = ({ component: PrivateComponent, ...rest }) => {
-  const { id } = rest.user;
-
-  // const user = localStorage.getItem("user");
-  // if (user) {
-  //   console.log(JSON.parse(user));
-  // } else {
-  //   console.log(false);
-  // }
+  const { access_token } = rest.user;
 
   return (
     <Route
       {...rest}
       render={(props) =>
-        id ? (
+        access_token ? (
           <PrivateComponent {...props} />
         ) : (
           <Redirect to="/auth" />
@@ -28,7 +21,7 @@ const RoutePrivate = ({ component: PrivateComponent, ...rest }) => {
 function mapStateToProps(state) {
   return {
     user: {
-      id: state.user.id
+      access_token: state.user.access_token
     },
   };
 }

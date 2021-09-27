@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from "redux";
 
 const initialState = {
-  id: null,
-  name: null,
-  email: null,
+  access_token: null,
+  expires: null,
+  refresh_token: null,
 };
 
 const reducers = combineReducers({

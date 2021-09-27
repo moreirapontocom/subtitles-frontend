@@ -2,19 +2,44 @@ import { connect } from "react-redux";
 import { setUser } from "./../state/actions/user.actions";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { login as doLogin } from "../services/users.service";
+import If from "./../components/If/If.component";
+import Auth from "./../services/auth.service";
 
 const AuthView = (props) => {
-  const history = useHistory();
 
+  useEffect(() => {
+    Auth.clearUser();
+  }, []);
+
+  const history = useHistory();
+  const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   async function login() {
+    setErrors([]);
     const user = await doLogin({ email, password });
-    props.setUser(user);
-    history.push("/videos");
+    if (user.errors) {
+      setErrors(user.errors);
+    } else {
+      Auth.setUser(user.data);
+      props.setUser(user.data);
+      history.push("/videos");
+    }
+  }
+
+  function mapErrors(errors) {
+    return errors.map((error, index) => {
+      return (
+        <>
+          <li key={index}>
+            <i className="fas fa-times me-2"></i> {error.message}
+          </li>
+        </>
+      );
+    });
   }
 
   return (
@@ -26,6 +51,11 @@ const AuthView = (props) => {
               <div className="card-body">
                 <h2>Login</h2>
                 <p>Descrição da página de login</p>
+                <If condition={errors && errors.length >= 0}>
+                  <ul className="list-unstyled text-danger">
+                    {mapErrors(errors)}
+                  </ul>
+                </If>
                 <form>
                   <div className="mb-3">
                     <label htmlFor="email" className="form-label">
@@ -78,9 +108,9 @@ const AuthView = (props) => {
 function mapStateToProps(state) {
   return {
     user: {
-      id: state.user.id,
-      name: state.user.name,
-      email: state.user.email,
+      access_token: state.user.access_token,
+      expires: state.user.expires,
+      refresh_token: state.user.refresh_token
     },
   };
 }

@@ -13,13 +13,21 @@ const Auth = {
     return this.authenticated;
   },
 
-  // getUser() {
-  //   return localStorage.getItem("user");
-  // },
+  getUser() {
+    const user = localStorage.getItem("user");
+    if (user) {
+      return JSON.parse(user)
+    }
+    return;
+  },
 
-  // setUser(user) {
-  //   localStorage.setItem("user", JSON.stringify(user));
-  // },
+  setUser(user) {
+    localStorage.setItem("user", JSON.stringify(user));
+  },
+
+  clearUser() {
+    localStorage.clear("user");
+  },
 };
 
 export default Auth;

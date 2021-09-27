@@ -1,8 +1,17 @@
-const API = "http://localhost:8055/items"; // Directus Headless CMS API
+import Auth from "./../services/auth.service";
+
+const API = "http://localhost:8055/items";
 const youtubeApiKey = "AIzaSyC-FhFJq7JYcqio6AKMSCpxmMXcUBrDg7o";
 
 export function getAllVideos() {
-  return fetch(`${API}/videos`)
+  const { access_token } = Auth.getUser();
+  return fetch(`${API}/videos`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${access_token}`,
+    },
+  })
     .then((res) => res.json())
     .then((data) => data.data);
 }
