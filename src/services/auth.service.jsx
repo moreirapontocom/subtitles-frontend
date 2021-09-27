@@ -1,32 +1,51 @@
 const Auth = {
-  authenticated: false,
+  user: null,
+  // authenticated: false,
 
-  login() {
-    this.authenticated = true;
-  },
+  // login() {
+    // this.authenticated = true;
+  // },
 
   logout() {
-    this.authenticated = false;
+    this.user = null;
+    this.clearUser();
+    // this.authenticated = false;
   },
 
   isAuthenticated() {
-    return this.authenticated;
+    const sto = localStorage.getItem("user");
+    if (this.user) {
+      return true;
+    } else {
+      if (sto) {
+        this.user = JSON.parse(sto);
+        return true;
+      }
+    }
+    return false;
   },
 
   getUser() {
-    const user = localStorage.getItem("user");
-    if (user) {
-      return JSON.parse(user)
+    const sto = localStorage.getItem("user");
+    if (this.user) {
+      return this.user;
+    } else {
+      if (sto) {
+        this.user = JSON.parse(sto);
+        return this.user;
+      }
     }
     return;
   },
 
   setUser(user) {
+    this.user = user;
     localStorage.setItem("user", JSON.stringify(user));
   },
 
   clearUser() {
-    localStorage.clear("user");
+    this.user = {};
+    localStorage.removeItem("user");
   },
 };
 

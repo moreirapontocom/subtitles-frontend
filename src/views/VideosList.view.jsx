@@ -101,7 +101,7 @@ const VideosListView = () => {
 
   return (
     <>
-      <Navbar authenticated={true} />
+      <Navbar />
 
       <div className="PageHeader">
         <PageHeader

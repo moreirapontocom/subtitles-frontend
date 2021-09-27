@@ -1,14 +1,13 @@
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import Auth from "./services/auth.service";
 
 const RoutePrivate = ({ component: PrivateComponent, ...rest }) => {
-  const { access_token } = rest.user;
-
   return (
     <Route
       {...rest}
       render={(props) =>
-        access_token ? (
+        Auth.isAuthenticated() ? (
           <PrivateComponent {...props} />
         ) : (
           <Redirect to="/auth" />

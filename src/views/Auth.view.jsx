@@ -1,31 +1,46 @@
-import { connect } from "react-redux";
-import { setUser } from "./../state/actions/user.actions";
+// import { connect } from "react-redux";
+// import { setUser } from "./../state/actions/user.actions";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { login as doLogin } from "../services/users.service";
+import { login as doLogin, getUserData } from "../services/users.service";
 import If from "./../components/If/If.component";
 import Auth from "./../services/auth.service";
 
 const AuthView = (props) => {
-
-  useEffect(() => {
-    Auth.clearUser();
-  }, []);
-
   const history = useHistory();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [remember, setRemember] = useState(false);
+
+  useEffect(() => {
+    Auth.clearUser();
+    checkRemember();
+  }, []);
+
+  function checkRemember() {
+    const sto = localStorage.getItem("remember");
+    if (sto) {
+      setEmail(sto);
+      setRemember(true);
+    }
+  }
 
   async function login() {
+    remember
+      ? localStorage.setItem("remember", email)
+      : localStorage.removeItem("remember");
+
     setErrors([]);
-    const user = await doLogin({ email, password });
-    if (user.errors) {
-      setErrors(user.errors);
+
+    const userAuth = await doLogin({ email, password });
+    if (userAuth.errors) {
+      setErrors(userAuth.errors);
     } else {
-      Auth.setUser(user.data);
-      props.setUser(user.data);
+      const userData = await getUserData(userAuth.data.access_token);
+      const user = { ...userAuth.data, ...userData.data};
+      Auth.setUser(user);
       history.push("/videos");
     }
   }
@@ -63,6 +78,7 @@ const AuthView = (props) => {
                     </label>
                     <input
                       onChange={(e) => setEmail(e.target.value)}
+                      defaultValue={email}
                       type="email"
                       id="email"
                       autoComplete="off"
@@ -80,6 +96,19 @@ const AuthView = (props) => {
                       autoComplete="off"
                       className="form-control"
                     />
+                  </div>
+                  <div className="mb-3">
+                    <label>
+                      <input
+                        onChange={() => {
+                          setRemember(!remember);
+                        }}
+                        checked={remember}
+                        className="form-check-input me-2"
+                        type="checkbox"
+                      />
+                      Remember me
+                    </label>
                   </div>
                   <button
                     disabled={!email || !password}
@@ -105,23 +134,4 @@ const AuthView = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    user: {
-      access_token: state.user.access_token,
-      expires: state.user.expires,
-      refresh_token: state.user.refresh_token
-    },
-  };
-}
-
-function mapDispatchToPro(dispatch) {
-  return {
-    setUser(user) {
-      const action = setUser(user);
-      dispatch(action);
-    },
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToPro)(AuthView);
+export default AuthView;
