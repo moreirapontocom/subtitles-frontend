@@ -29,7 +29,7 @@ const EditorView = () => {
 
   return (
     <>
-      <Navbar authenticated={true} />
+      <Navbar />
 
       <div className="PageHeader with-tabs">
         <PageHeader title={video.title} description={video.description} />

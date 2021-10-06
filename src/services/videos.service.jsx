@@ -17,9 +17,31 @@ export function getAllVideos() {
 }
 
 export function getVideoById(videoId) {
-  return fetch(`${API}/videos/${videoId}`)
+  const { access_token } = Auth.getUser();
+  return fetch(`${API}/videos/${videoId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${access_token}`,
+    },
+  })
     .then((res) => res.json())
     .then((data) => data.data);
+}
+
+export function updateVideo(video) {
+  const { access_token } = Auth.getUser();
+  const { id, subtitles } = video;
+  return fetch(`${API}/videos/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${access_token}`,
+    },
+    body: JSON.stringify({ subtitles }),
+  })
+    .then((data) => data.json())
+    .then((data) => data);
 }
 
 export function addVideo(video) {
