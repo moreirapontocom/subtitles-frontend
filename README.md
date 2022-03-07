@@ -1,70 +1,42 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) version 17.0.2.
 
-## Available Scripts
+## Development server
 
-In the project directory, you can run:
+Run `npm start` for a dev server. Navigate to `http://localhost:9000/`. The app will automatically reload if you change any of the source files.
 
-### `npm start`
+## Project description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Platform intended to help content producers (on Youtube or Vimeo) to get perfect subtitles and closed captions (CC) in their videos. Both, Youtube and Vimeo, has its own auto-generated subtitles but they are far way to be good enough.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This platform have two different access profiles: producer and consultant.
 
-### `npm test`
+**Producers can:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Add Youtube videos to be subtitled
+* Integrate with the Youtube API to get auto-generated subtitles
+* Choose which type of subtitles is needed for each video (language, closed-caption, etc).
+* Receive email notifications when video status has changed
 
-### `npm run build`
+**Consultants can:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* See unassigned videos to work on
+* Write subtitles using the auto-play/pause tool
+* Change video status
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This is a platform built for study purposes using Angular 12. The API is a headless CMS (Directus CMS) using NodeJS and MySQL.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Screenshots
 
-### `npm run eject`
+Login:
+![Login](public/readme-images/login.jpg "Login")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Consultants view with unassigned videos from all producers and only those videos his already started.
+![Consultants view](public/readme-images/videos-consultant-view.jpg "Consultants view")
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Consultants subtitle tool with auto-play/pause feature.
+![Subtitle tool](public/readme-images/subtitles-tool.jpg "Subtitle tool")
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Producers submit video tool with auto-preview and integration with the Youtube API.
+![Submit tool](public/readme-images/submit-video.jpg "Submit")
